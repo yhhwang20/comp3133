@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" href="css/style.css" />
+    
+  </head>
+  <body>
+    <div class="wrapper">
+      
+      <div class="display-container">
+        <ul class="chatting-list">
+        </ul>
+      </div>
+      <div class="input-container">
+        <span>
+          <input type="text" class="chatting-input" size="100">
+          <button class="send-button">SEND</button>
+          <button class="send-button" style="color: red;">
+            <a href="http://localhost:3000/dashboard">
+              Leave Room
+            </a>
+          </button>
+          
+        </span>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/chat.js"></script>
+  </body>
+</html>
