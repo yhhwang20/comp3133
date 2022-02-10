@@ -99,19 +99,28 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log("Socket io connected")
+  //Room join
+  socket.on('joinRoom', (room) => {
+    console.log(room)
+    socket.join(room)
+  })
+
   socket.on("chatting",(data)=>{
     const { message } = data;
     console.log(data)
-
     //MongoDB data store
-    const msg = new Message(data);
-    msg.save().then(()=>{
-      io.emit("chatting", {
+    const msg = new Message(
+      {
+        message: data.message, 
+        room: data.room
+      });
+    msg.save()
+    io.emit("chatting", {
         message,
         time: moment(new Date()).format("h:ss A")
       })
-    })
-  })
+    
+  });
   
   socket.on('disconnect', () => {
     console.log(`${socket.id} disconnected`)

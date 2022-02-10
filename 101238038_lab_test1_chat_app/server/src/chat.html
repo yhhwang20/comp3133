@@ -3,7 +3,6 @@
   <head>
     <title>Socket.IO chat</title>
     <link rel="stylesheet" href="css/style.css" />
-    
   </head>
   <body>
     <div class="wrapper">
@@ -14,9 +13,10 @@
       </div>
       <div class="input-container">
         <span>
-          <input type="text" class="chatting-input" size="100">
+          <input type="text" class="chatting-input" size="100" placeholder="Enter username..."
+          required>
           <button class="send-button">SEND</button>
-          <button class="send-button" style="color: red;">
+          <button class="leave-button" style="color: red;">
             <a href="http://localhost:3000/dashboard">
               Leave Room
             </a>
@@ -25,6 +25,11 @@
         </span>
       </div>
     </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/chat.js"></script>
   </body>

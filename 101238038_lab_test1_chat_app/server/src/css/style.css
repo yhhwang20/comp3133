@@ -47,9 +47,21 @@ html, body {
 	font-size: 18px; 
 }
 .send-button {
-	background: rgb(172, 169, 37); 
+	background: rgb(212, 210, 41); 
 	border: none;border-radius: 4px; 
 	padding: 15px 32px;
+	font-weight: bold;
+}
+
+.leave-button{
+	background:red; 
+	border: none;border-radius: 4px; 
+	padding: 15px 32px;
+}
+.leave-button a{
+	font-size: larger;
+	color: white;
+	text-decoration: none;
 }
 .chatting-list li {
 	width: 90%;

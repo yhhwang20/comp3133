@@ -10,10 +10,10 @@ const messageSchema = new mongoose.Schema(
         },
         room: {
             type: String,
+            required: true,
         },
         message: {
             type: String,
-            required: true,
         },
         date_sent: {
             type: Date,
